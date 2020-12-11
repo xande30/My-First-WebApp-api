@@ -8,7 +8,7 @@ class Modeltests(TestCase):
         email = 'myemail@fmail.com'
         password = 'MatriX/>30{0}0'
         user = get_user_model().objects.create_user(
-            email=ermail
+            email=email
             password=password
         )
 
@@ -22,7 +22,7 @@ class Modeltests(TestCase):
 
         self.assertEqual(user.email, email.lower())
 
-   def test_new_user_invalid_emasil(self):
+   def test_new_user_invalid_email(self):
        """Testing when creating a new user will give an error"""
        with self.assert.Raises(ValueError):
            get_user_model().objects.create_user(None, 'neo123')
